@@ -1,0 +1,133 @@
+@import url("normalize.css");
+
+@font-face {
+    font-family: "WorkSans", sans-serif;
+    src: url("assets/fonts/WorkSans-VariableFont_wght.ttf");
+}
+
+:root{
+    --purple-100: hsl(275, 100%, 97%);
+    --purple-600: hsl(292, 16%, 49%);
+    --purple-950: hsl(292, 42%, 14%);
+
+    --accent-color: hsl(281, 83%, 54%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body{
+    background-image: url("assets/images/background-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    display: flex;
+    height: 100svh;
+    justify-content: center;
+    align-items: center;
+    font-family: "WorkSans", sans-serif;
+    background-color: var(--purple-100);
+    line-height: 1.5;
+}
+
+hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid var(--purple-100);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.faq-card{
+    width: 600px;
+    border-radius: 15px;
+    padding: 30px 40px 40px 40px;
+    background-color: white;
+}
+
+.faq-card__title-wrapper{
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.faq-card__title{
+    margin: 0;
+    font-size: 55px;    
+    color: var(--purple-950);
+}
+
+.faq-card__question-block{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-card__question{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    color: var(--purple-950);
+    padding: 0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.faq-card__answer{
+    overflow: hidden;
+    max-height: 0px;
+    font-weight: 400;
+    color: var(--purple-600);
+    transition: max-height 0.5s ease;
+}
+
+.faq-card__question:hover{
+    cursor: pointer;
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px){
+    body{
+        background-image: url("assets/images/background-pattern-mobile.svg");
+    }
+
+    .faq-card{
+        width: 327px;
+        border-radius: 15px;
+        padding: 15px 25px 25px 25px;
+        background-color: white;
+    }
+
+    .faq-card__title-icon{
+        width: 25px;
+        height: auto;
+    }
+
+    .faq-card__title{
+        font-size: 32px;
+    }
+
+    .faq-card__question{
+        text-align: left;
+        font-size: 17px;
+    }
+
+    .faq-card__answer{
+        font-size: 14px;
+    }
+}
